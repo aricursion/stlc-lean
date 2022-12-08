@@ -1,6 +1,5 @@
 import dict
 import tactic
-import data.option.basic
 import tactic.induction
 
 def var := ℕ 
@@ -234,8 +233,7 @@ lemma inversion_Ap {Γ : Context} {e1 e2 : Term} {τ : Typ} (h : has_type Γ (Te
 :=
 begin 
   cases h with _ _ _ _ _ _ _ _ _ _ _ τ' _ _ _ h1 h2,
-  --rcases h with _| _| ⟨a, b, c, d, e, f, g⟩,
-  
+  --rcases h with _| _| @⟨a, τ', c, d, e, h1, h2⟩,
   use [τ', τ],
   exact ⟨rfl, ⟨h1, h2⟩⟩,
 end

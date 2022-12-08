@@ -1,4 +1,5 @@
 import tactic 
+
 structure Dict (α : Type*) (β : Type*) :=
   (data : α -> option β)
 
